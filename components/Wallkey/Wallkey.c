@@ -52,11 +52,20 @@ static int8_t Wallkey_Read(uint8_t *Key_Id, int8_t Switch)
     if (len1 != 0) //读取到按键数据
     {
         len1 = 0;
+
+        printf("data_u1=");
+        for(int i=0;i<len1;i++)
+        {
+            printf("0x%02X ",data_u1[i]);
+        }
+        printf("\n");
+
+
         if ((data_u1[0] == 0x7e) && (data_u1[1] == 0x08) && (data_u1[2] == 0x0D) && (data_u1[12] == 0x0D)) //校验数据头尾
         {
             if ((data_u1[3] == Key_Id[0]) && (data_u1[4] == Key_Id[1]) && (data_u1[5] == Key_Id[2]) && (data_u1[6] == Key_Id[3])) //校验KEY ID是否满足
             {
-                ESP_LOGI(TAG, "Key ID = %02x-%02x-%02x-%02x", data_u1[3], data_u1[4], data_u1[5], data_u1[6]);
+                ESP_LOGI(TAG, "Key ID = %02x-%02x-%02x-%02x", data_u1[3], data_u1[4], data_u1[5], data_u1[6]); 
                 ESP_LOGI(TAG, "Key channel = %02x-%02x", data_u1[7] ,data_u1[8]);
                 ESP_LOGI(TAG, "Key value = %02x", data_u1[10]);
 
