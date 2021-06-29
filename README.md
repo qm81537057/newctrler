@@ -34,3 +34,6 @@ if(strchr(recv_buf, '{')!=NULL)
 
 2021-02-03
 http_send_mes(),DNS lookup failed err,增加return
+
+2021-06-29
+修改为捷昌管状遥控器
