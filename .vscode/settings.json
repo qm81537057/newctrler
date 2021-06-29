@@ -1,0 +1,8 @@
+{
+        "C_Cpp.errorSquiggles": "Disabled",
+        "files.associations": {
+            "task.h": "c",
+            "wallkey.h": "c",
+            "motorctl.h": "c"
+        }
+}
